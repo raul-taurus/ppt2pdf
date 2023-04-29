@@ -4,10 +4,11 @@ using System.Runtime.InteropServices;
 
 if (args.Length > 0)
 {
-    if (Directory.Exists(args[0]))
+    var path = Path.GetFullPath(args[0]);
+    if (Directory.Exists(path))
     {
         using var app = new PowerPoint();
-        foreach (var pptFile in Directory.EnumerateFiles(args[0], "*", SearchOption.AllDirectories))
+        foreach (var pptFile in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
         {
             var ext = Path.GetExtension(pptFile).ToUpperInvariant();
             if (ext == ".PPTX" || ext == ".PPT")
@@ -19,15 +20,14 @@ if (args.Length > 0)
     }
     else
     {
-        if (File.Exists(args[0]))
+        if (File.Exists(path))
         {
-            string pptFile = args[0];
             using var app = new PowerPoint();
-            app.ConvertToPdf(pptFile);
+            app.ConvertToPdf(path);
         }
         else
         {
-            Console.Error.WriteLine($"Cannot find file: {args[0]}");
+            Console.Error.WriteLine($"Cannot find file: {path}");
             return;
         }
     }

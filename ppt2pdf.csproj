@@ -10,10 +10,10 @@
 
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.PowerPoint">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
+      <HintPath>./Office-PIA/Microsoft.Office.Interop.PowerPoint.dll</HintPath>
     </Reference>
     <Reference Include="office">
-      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Office.dll</HintPath>
+      <HintPath>./Office-PIA/Office.dll</HintPath>
     </Reference>
   </ItemGroup>
 

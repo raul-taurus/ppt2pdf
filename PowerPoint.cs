@@ -20,7 +20,7 @@ class PowerPoint : IDisposable
         var ppt = _presentations.Open(pptFile,
             ReadOnly: MsoTriState.msoTrue,
             Untitled: MsoTriState.msoFalse,
-            WithWindow: MsoTriState.msoFalse);
+            WithWindow: MsoTriState.msoTrue);
 
         Console.WriteLine("Export as PDF...");
         string pdfFile = Path.ChangeExtension(pptFile, ".pdf");
